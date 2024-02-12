@@ -1,0 +1,4 @@
+vars:
+  region: us-central1
+  environment: gbl
+
