@@ -1,0 +1,23 @@
+---
+name: infrastructure-ci
+
+on:
+  pull_request:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: setup atmos
+        uses: cloudposse/github-action-setup-atmos@v1
+
+      - name: run atmos
+        id: atmos-run
+        run: atmos terraform plan
+
+      - run: echo ${{ steps.atmos-run.outputs.stdout }}
+      - run: echo ${{ steps.atmos-run.outputs.stderr }}
+      - run: echo ${{ steps.atmos-run.outputs.exitcode }}
