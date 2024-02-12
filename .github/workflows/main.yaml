@@ -8,6 +8,9 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout scm
+        uses: actions/checkout@v4
+
       - name: install terraform
         uses: hashicorp/setup-terraform@v2
 
