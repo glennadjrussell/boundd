@@ -1,0 +1,11 @@
+name: runners
+description: Deploy the runner infrastructure
+
+workflows:
+
+  plan-all-runners:
+    description: |
+      Run `terraform plan` on all `echor` components
+    steps:
+      - name: "`echor` in `runners-gbl-prod`"
+        command: terraform plan echor -s runners-gbl-prod
