@@ -19,7 +19,7 @@ jobs:
 
       - name: run atmos
         id: atmos-run
-        run: atmos terraform plan
+        run: atmos terraform plan echor -s runners-gbl-prod
 
       - run: echo ${{ steps.atmos-run.outputs.stdout }}
       - run: echo ${{ steps.atmos-run.outputs.stderr }}

@@ -1,0 +1,5 @@
+**/.terraform
+**/*.planfile
+**/*.lock*
+**/*.tf.json
+**/*.tfvars.json

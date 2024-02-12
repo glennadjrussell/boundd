@@ -1,3 +1,6 @@
 vars:
   namespace: acme
 
+
+terraform:
+  backend_type: local
