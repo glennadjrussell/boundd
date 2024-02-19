@@ -1,0 +1,7 @@
+components:
+  terraform:
+    test-remap:
+      metadata:
+        component: test-remap
+      vars:
+        test: "Prom!"

@@ -1,0 +1,7 @@
+import:
+  - catalog/test-remap/defaults
+
+components:
+  terraform:
+    echor:
+      vars:

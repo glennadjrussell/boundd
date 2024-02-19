@@ -1,0 +1,6 @@
+components:
+  terraform:
+    projects:
+      metadata:
+        component: project
+      vars:
