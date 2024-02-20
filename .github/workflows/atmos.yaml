@@ -1,5 +1,5 @@
 ---
-name: infrastructure-ci
+name: atmos-runner
 
 on:
   issue_comment:
