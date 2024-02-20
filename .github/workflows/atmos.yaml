@@ -1,0 +1,27 @@
+---
+name: infrastructure-ci
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  atmos-plan:
+    if: contains(github.event.comment.html_url, '/pull')
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout scm
+        uses: actions/checkout@v4
+
+      - name: install terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: setup atmos
+        uses: cloudposse/github-action-setup-atmos@v1
+
+      - name: run atmos
+        id: atmos-run
+        if: startsWith(github.event.comment.body, 'atmos terraform')
+          #run: atmos workflow plan-all-runners --file runners
+        run: echo "Derp atmos run"
+
