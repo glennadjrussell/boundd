@@ -1,8 +1,7 @@
-import:
-  - catalog/echor/defaults
-
 components:
   terraform:
     echor:
+      metadata:
+        component: echor
       vars:
         test: true

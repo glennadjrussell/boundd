@@ -1,8 +1,7 @@
 import:
-  - catalog/echor/defaults
+  - catalog/test-remap/defaults
 
 components:
   terraform:
     echor:
       vars:
-        test: true

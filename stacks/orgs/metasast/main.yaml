@@ -1,0 +1,7 @@
+vars:
+  stage: dev
+  tenant: saas
+  environment: gcp
+
+import:
+  - catalog/echor/prod
