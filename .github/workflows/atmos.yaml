@@ -24,5 +24,3 @@ jobs:
         if: startsWith(github.event.comment.body, 'atmos workflow')
         run: ${{ github.event.comment.body }}
 
-  post-results:
-    needs: [ atmos-plan ]
