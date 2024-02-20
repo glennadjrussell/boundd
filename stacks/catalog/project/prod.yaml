@@ -1,0 +1,7 @@
+import:
+  - catalog/project/defaults
+
+components:
+  terraform:
+    project:
+      vars:
