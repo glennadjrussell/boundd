@@ -34,9 +34,9 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `## Atmos plan
-              ${{ steps.atmos-run.output.stdout }}
-              ${{ steps.atmos-run.output.stderr }}
-              ${{ steps.atmos-run.output.exitcode }}
+              ${{ steps.atmos-run.outputs.stdout }}
+              ${{ steps.atmos-run.outputs.stderr }}
+              ${{ steps.atmos-run.outputs.exitcode }}
             `;
 
             github.rest.issues.createComment({
