@@ -2,4 +2,4 @@
 Test commit
 
 ## Deployment
-Lorem ipsum. Dib
+Lorem ipsum. Dibs

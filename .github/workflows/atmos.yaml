@@ -33,10 +33,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `## Atmos plan
-              ${{ steps.atmos-run.outputs.stdout }}
-              ${{ steps.atmos-run.outputs.stderr }}
-              ${{ steps.atmos-run.outputs.exitcode }}
+            const output = `#### Atmos plan
+
+              #### Atmos status \`${{ steps.atmos-run.outputs.exitcode }}\`
+
+              <details><summary>Show Atmos plan</summary>
+              \`${{ steps.atmos-run.outputs.stdout }}\`
             `;
 
             github.rest.issues.createComment({
