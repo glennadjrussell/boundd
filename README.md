@@ -2,4 +2,4 @@
 Test commit
 
 ## Deployment
-Lorem ipsum.
+Lorem ipsum
