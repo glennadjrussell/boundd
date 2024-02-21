@@ -9,6 +9,10 @@ jobs:
   atmos-plan:
     if: contains(github.event.comment.html_url, '/pull')
     runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
     steps:
       - name: checkout scm
         uses: actions/checkout@v4
