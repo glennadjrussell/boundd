@@ -30,15 +30,22 @@ jobs:
 
       - name: update pr with comments
         uses: actions/github-script@v6
+        env:
+          PLAN: "terraform\n${{ steps.atmos-run.outputs.stdout }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `#### Atmos plan
+            const output = `## Atmos plan
 
               #### Atmos status \`${{ steps.atmos-run.outputs.exitcode }}\`
 
               <details><summary>Show Atmos plan</summary>
-              \`${{ steps.atmos-run.outputs.stdout }}\`
+
+              \`\`\`\n
+              ${process.env.PLAN}
+              \`\`\`
+
+              </details>
             `;
 
             github.rest.issues.createComment({
