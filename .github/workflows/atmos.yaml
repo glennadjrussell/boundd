@@ -24,3 +24,20 @@ jobs:
         if: startsWith(github.event.comment.body, 'atmos workflow')
         run: ${{ github.event.comment.body }}
 
+      - name: update pr with comments
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `## Atmos plan
+              ${{ steps.atmos-run.output.stdout }}
+              ${{ steps.atmos-run.output.stderr }}
+              ${{ steps.atmos-run.output.exitcode }}
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
