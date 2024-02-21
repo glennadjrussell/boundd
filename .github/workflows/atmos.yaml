@@ -26,7 +26,7 @@ jobs:
       - name: run atmos
         id: atmos-run
         if: startsWith(github.event.comment.body, 'atmos workflow')
-        run: ${{ github.event.comment.body }} -- -no-color
+        run: ${{ github.event.comment.body }}
 
       - name: update pr with comments
         uses: actions/github-script@v6

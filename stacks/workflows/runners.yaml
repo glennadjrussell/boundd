@@ -8,4 +8,4 @@ workflows:
       Run `terraform plan` on all `echor` components
     steps:
       - name: "`echor` in `runners-gbl-prod`"
-        command: terraform plan echor -s runners-gbl-prod
+        command: terraform plan echor -s runners-gbl-prod -- -no-color
